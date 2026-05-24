@@ -1,0 +1,48 @@
+class Solution {
+mergeArrays(a, b) {
+    let c = [];
+    c.length = a.length + b.length;
+    let k = c.length-1;
+    let i = a.length-1;
+    let j = b.length-1;
+    
+    while(i >= 0 && j >= 0){
+        if(a[i] > b[j]){
+            c[k] = (a[i]);
+            k--;
+            i--;
+        }
+        else if(b[j] > a[i]){
+           c[k] = (b[j]);
+           j--;
+           k--;
+        }else{
+           c[k] = (a[i]); 
+           k--;
+           c[k] = (b[j]);
+           k--;
+           i--;
+           j--;
+        }
+    }
+    while(i >= 0){
+       c[k] = (a[i]) ;
+       k--;
+       i--;
+    }
+    while(j >= 0){
+         c[k] = (b[j]) ;
+       k--;
+       j--;
+    }
+   for(let d = 0; d < a.length; d++){
+       a[d] = c[d];
+   }  
+   let h = 0
+   for(let d = a.length; d < c.length; d++){
+       b[h] = c[d];
+       h++;
+   }
+   
+    }
+}
