@@ -44,3 +44,46 @@ var minIncrementForUnique = function(nums) {
 return c;
     
 };
+
+
+//     ================================================== SET Approch ==========================
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var minIncrementForUnique = function(nums) {
+    let s = new Set();
+    let c = 0;
+
+    for(num of nums){
+        while(s.has(num)){
+            c++;
+            num++;
+        }
+        s.add(num);
+    }
+    return c;
+};
+
+
+
+// ===============================================Sorting Approch =======================
+
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var minIncrementForUnique = function(nums) {
+    let c = 0;
+     nums = nums.sort((a,b) => a-b);
+
+    for(let i = 1; i < nums.length; i++){
+        if(nums[i] <= nums[i-1]){
+            let target = nums[i-1] +1;
+             c = c + target - nums[i];
+             nums[i] = target;
+        }
+    }
+    return c;
+};
