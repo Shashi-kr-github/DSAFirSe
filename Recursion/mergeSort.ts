@@ -44,21 +44,9 @@ class MargeShot {
           k++;
      }
 
-
-
-
      console.log(left, right, arr1)
-
-
-     
-
-         
-
        
     }
-
-
-
 }
 let margeShot = new MargeShot();
 

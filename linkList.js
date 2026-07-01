@@ -62,6 +62,17 @@ class LinkedList {
         return;
     }
 
+    printList(){
+        let curr = this.head;
+        let res = "";
+
+        while(curr != null) {
+            res += curr.value + " ";
+            curr = curr.next;
+        }
+        console.log(res);
+    }
+
 
 
 
